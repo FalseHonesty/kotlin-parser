@@ -270,7 +270,7 @@ typeConstraint
     ;
 
 genericBlock
-    : LCURL .* RCURL
+    : LCURL (~(LCURL | RCURL) | genericBlock)* RCURL
     ;
 
 block
