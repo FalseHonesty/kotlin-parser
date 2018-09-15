@@ -378,6 +378,7 @@ dotQualifiedExpression
 assignableExpression
     : primaryExpression
     | indexingExpression
+    | identifier typeArguments? valueArguments? annotatedLambda*
     ;
 
 indexingExpression
