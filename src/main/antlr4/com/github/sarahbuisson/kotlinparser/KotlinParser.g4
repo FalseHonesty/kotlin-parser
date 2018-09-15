@@ -153,7 +153,7 @@ parameter
     ;
 
 functionBody
-    : block
+    : genericBlock
     | ASSIGNMENT NL* expression
     ;
 
@@ -267,6 +267,10 @@ typeConstraints
 
 typeConstraint
     : annotations* simpleIdentifier NL* COLON NL* type
+    ;
+
+genericBlock
+    : LCURL .* RCURL
     ;
 
 block
