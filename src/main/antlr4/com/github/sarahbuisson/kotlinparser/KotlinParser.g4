@@ -35,7 +35,7 @@ importList
     ;
 
 importHeader
-    : IMPORT (simpleIdentifier (NL* DOT simpleIdentifier)*) semi?
+    : IMPORT (simpleIdentifier (NL* DOT simpleIdentifier)*) importAlias? semi?
     ;
 
 importAlias
@@ -108,7 +108,7 @@ anonymousInitializer
     ;
 
 secondaryConstructor
-    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* block
+    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* block?
     ;
 
 constructorDelegationCall
@@ -386,7 +386,7 @@ assignableExpression
     ;
 
 indexingExpression
-    : identifier arrayAccess+
+    : identifier (LPAREN valueArguments? RPAREN)? arrayAccess+
     ;
 
 callSuffix
@@ -657,7 +657,7 @@ postfixUnaryOperator
     ;
 
 memberAccessOperator
-    : DOT | QUEST DOT
+    : DOT | QUEST DOT | EXCL EXCL DOT
     ;
     
 modifierList
