@@ -284,7 +284,7 @@ NullLiteral
     ;
 
 Identifier
-    : (Letter | '_') (Letter | '_' | DecDigit)*
+    : (Letter | '_') (Letter | '_' | DecDigit | DOT)*
     | '`' ~('`')+ '`'
     ;
 
