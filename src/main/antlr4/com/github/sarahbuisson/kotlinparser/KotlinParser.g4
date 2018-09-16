@@ -35,7 +35,7 @@ importList
     ;
 
 importHeader
-    : IMPORT (simpleIdentifier (NL* DOT simpleIdentifier)*) importAlias? semi?
+    : IMPORT (simpleIdentifier (NL* DOT (simpleIdentifier | MULT))*) importAlias? semi?
     ;
 
 importAlias
@@ -104,7 +104,7 @@ classMemberDeclaration
     ;
 
 anonymousInitializer
-    : INIT NL* block
+    : INIT NL* genericBlock
     ;
 
 secondaryConstructor
@@ -764,7 +764,7 @@ unescapedAnnotation
     ;
 
 identifier
-    : simpleIdentifier (NL* DOT simpleIdentifier)*
+    : simpleIdentifier (NL* DOT NL* simpleIdentifier)*
     ;
 
 simpleIdentifier
