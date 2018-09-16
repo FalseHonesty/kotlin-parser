@@ -108,7 +108,7 @@ anonymousInitializer
     ;
 
 secondaryConstructor
-    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* block?
+    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* genericBlock?
     ;
 
 constructorDelegationCall
@@ -739,7 +739,7 @@ annotations
 
 annotation
     : annotationUseSiteTarget NL* COLON NL* unescapedAnnotation
-    | LabelReference (NL* typeArguments)? (NL* valueArguments)?
+    | LabelReference (DOT Identifier)* (NL* typeArguments)? (NL* valueArguments)?
     ;
 
 annotationList
