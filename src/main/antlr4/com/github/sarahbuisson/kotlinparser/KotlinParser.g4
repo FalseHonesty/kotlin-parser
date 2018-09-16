@@ -35,7 +35,7 @@ importList
     ;
 
 importHeader
-    : IMPORT identifier (DOT MULT | importAlias)? semi?
+    : IMPORT (simpleIdentifier (NL* DOT simpleIdentifier)*) semi?
     ;
 
 importAlias
@@ -108,7 +108,7 @@ anonymousInitializer
     ;
 
 secondaryConstructor
-    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* block
+    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* block?
     ;
 
 constructorDelegationCall
