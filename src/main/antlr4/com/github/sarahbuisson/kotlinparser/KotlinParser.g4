@@ -390,8 +390,8 @@ indexingExpression
     ;
 
 callSuffix
-    : typeArguments? valueArguments classBody
-    | typeArguments classBody
+    : typeArguments? valueArguments classBody?
+    | typeArguments classBody?
     ;
 
 annotatedLambda
