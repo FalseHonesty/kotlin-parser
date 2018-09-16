@@ -108,7 +108,7 @@ anonymousInitializer
     ;
 
 secondaryConstructor
-    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* block?
+    : modifierList? CONSTRUCTOR NL* functionValueParameters (NL* COLON NL* constructorDelegationCall)? NL* block
     ;
 
 constructorDelegationCall
@@ -489,8 +489,8 @@ multiLineStringExpression
 
 functionLiteral
     : annotations*
-    ( LCURL NL* statements NL* RCURL
-    | LCURL NL* lambdaParameters NL* ARROW NL* statements NL* RCURL )
+    ( LCURL NL* (~(LCURL | RCURL) | stringLiteral | genericBlock)* NL* RCURL
+    | LCURL NL* lambdaParameters NL* ARROW NL* (~(LCURL | RCURL) | stringLiteral | genericBlock)* NL* RCURL )
     ;
 
 lambdaParameters
